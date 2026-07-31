@@ -1,136 +1,125 @@
-@font-face {
-    font-family:'Geist Med';
-    src:url('/assets/fonts/geist-med.woff2') format('woff2');
-}
-
-@font-face {
-    font-family:'Geist Reg';
-    src:url('/assets/fonts/geist-reg.woff2') format('woff2');
-}
-
-@font-face {
-    font-family:'Geist Mono';
-    src:url('/assets/fonts/geist-mono.woff2') format('woff2');
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding:0
 }
 
 :root {
-    --dark:#020100;
-    --light:#FEFFFA;
-    --mute:color-mix(in srgb, var(--dark) 40%, transparent);
-    --sans:'Geist Reg', -apple-system, sans-serif;
-    --mono:'Geist Mono', monospace;
+    --font: -apple-system, system-ui, BlinkMacSystemFont, Inter, sans-serif;
+    --grey-1: oklch(27.4% 0.006 286.033);
+    --grey-2: oklch(44.2% 0.017 285.786);
+    --grey-3: oklch(70.5% 0.015 286.067);
+    --border: oklch(92% 0.004 286.32);
+    --border-2: oklch(87.1% 0.006 286.286);
+    --bg: oklch(98.5% 0 none)
 }
 
 html {
-    background-color:var(--light);
-    color:var(--dark);
-    font-family:var(--sans), Times, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-    font-size:14px;
-    font-weight:400;
-    letter-spacing:-0.02em;
-    line-height:130%;
+    background: var(--bg);
+    font-family: var(--font);
+    color:var(--grey-1)
 }
 
-a {
-    text-decoration:none;
-    color:var(--dark);
+body {
+    min-height:100dvh
 }
 
-a:hover {
-    text-decoration:underline;
-    text-decoration-style:dotted;
+table {
+    width:60vdw
 }
 
-main {
-    height:85dvh;
-    display:flex;
-    flex-direction:column;
-    padding:2.25em 2.5em;
-    align-items:center;
-    justify-content:center;
+table td, table th {
+    vertical-align: top;
+    text-align: left;
+    padding:1rem
 }
 
-.site {
-    width:540px;
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
+small, small > span {
+    font-size:10px
 }
 
-header, article {
-    margin:0;
-    padding:0;
+.name {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -.02rem;
+    color: var(--grey-1);
+    margin-bottom:.5rem
 }
 
-article > ul {
-    padding-left:0;
-    margin-left:0;
-    margin-bottom:2rem;
+.name > a {
+    text-decoration: none;
+    color:var(--grey-1)
 }
 
-article > ul > li {
-    list-style-type:none;
-    padding-left:0;
-    margin-left:0;
-    margin-bottom:0.5rem;
-    padding-top:0;
+.bio {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--grey-2);
+    max-width: 40ch;
+    margin-bottom:.6rem
 }
 
-article > ul > li > a {
-    text-decoration:underline;
-    text-decoration-style:dotted;
-    text-underline-offset:2px;
+.email {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--grey-3);
+    text-decoration: none;
+    border-bottom: .5px solid var(--border);
+    padding-bottom: 1px;
+    margin-bottom:3rem
 }
 
-article > ul > li > a:hover {
-    text-decoration-style:solid;
+.email:hover {
+    color: var(--grey-2);
+    border-color:var(--border-2)
 }
 
-footer {
-    color:var(--mute);
-    font-family:var(--mono);
-    letter-spacing:0; 
-    line-height:100%;
+.item {
+    align-items: start;
+    border-bottom: .5px solid var(--border);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition:background .1s
 }
 
-footer > p > small > a {
-    color:var(--mute);
-    font-family:var(--mono);
-    letter-spacing:0;
-    line-height:100%;
-    text-decoration:underline;
-    text-decoration-style:dotted;
-    text-underline-offset:2px;
+.item > div {
+    margin-bottom:.75rem
 }
 
-footer > p > small > a:hover {
-    text-decoration-style:solid;
+.title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--grey-1);
+    margin-bottom:.25em
 }
 
-@media only screen and (max-width: 767px) {
-    main {
-        height:85dvh;
-        display:inline-block;
-        margin:0 auto;
-    }
-
-    .site {
-        max-width:80dvw;
-        margin:0 auto;
-        overflow-x:hidden;
-    }
+.snippet {
+    font-size: 10px;
+    line-height: 1.55;
+    color:var(--grey-3)
 }
 
-@media only screen and (max-width: 441px) {
-    main {
-        height:85dvh;
-        display:inline-block;
-        margin:0 auto;
-    }
+.links {
+    display: flex;
+    gap:1.25rem
+}
 
-    .site {
-        max-width:80dvw;
-        margin:0 auto;
-        overflow-x:hidden;
-    }
+.link, .link > a {
+    font-size: 10px;
+    color: var(--grey-3);
+    text-decoration: none;
+    border-bottom: .5px solid var(--border);
+    padding-bottom:1px
+}
+
+.link:hover, .link > a:hover {
+    color: var(--grey-2);
+    border-color: var(--border-2)
+}
+
+@media (max-width:768px) {
+	table {width:98%;margin:0 auto;}
 }
