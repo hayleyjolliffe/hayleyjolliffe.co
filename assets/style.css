@@ -5,7 +5,7 @@
 }
 
 :root {
-    --font: -apple-system, system-ui, BlinkMacSystemFont, Inter, sans-serif;
+    --font: -apple-system, BlinkMacSystemFont, Inter, Helvetica, system-ui, sans-serif;
     --grey-1: oklch(27.4% 0.006 286.033);
     --grey-2: oklch(44.2% 0.017 285.786);
     --grey-3: oklch(70.5% 0.015 286.067);
@@ -25,7 +25,7 @@ body {
 }
 
 table {
-    width:60vdw
+    width:65vdw
 }
 
 table td, table th {
@@ -35,11 +35,11 @@ table td, table th {
 }
 
 small, small > span {
-    font-size:10px
+    font-size:12px
 }
 
 .name {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: -.02rem;
     color: var(--grey-1);
@@ -52,16 +52,16 @@ small, small > span {
 }
 
 .bio {
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 1.65;
     color: var(--grey-2);
-    max-width: 40ch;
+    max-width: 50ch;
     margin-bottom:.6rem
 }
 
 .email {
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 400;
     color: var(--grey-3);
     text-decoration: none;
@@ -89,7 +89,7 @@ small, small > span {
 }
 
 .title {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     line-height: 1.35;
     color: var(--grey-1);
@@ -97,7 +97,7 @@ small, small > span {
 }
 
 .snippet {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.55;
     color:var(--grey-3)
 }
@@ -108,7 +108,7 @@ small, small > span {
 }
 
 .link, .link > a {
-    font-size: 10px;
+    font-size: 12px;
     color: var(--grey-3);
     text-decoration: none;
     border-bottom: .5px solid var(--border);
